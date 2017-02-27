@@ -123,3 +123,14 @@ FROM (SELECT AVG(stars) AS Avr FROM Rating R, Movie M
 ***Query failed to execute: no such column: aa
 
 SQL Movie-Rating Query Exercises Extras
+
+Q7
+(1/1 point)
+List movie titles and average ratings, from highest-rated to lowest-rated. If two or more movies have the same average rating, list them in alphabetical order. 
+
+SELECT title, AVG(stars)
+FROM Movie M
+JOIN Rating R
+ON M.mID=R.mID
+GROUP BY 1
+ORDER BY 2 DESC, 1
